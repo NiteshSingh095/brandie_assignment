@@ -7,6 +7,9 @@ export 'core/core.dart';
 export 'views/view.dart';
 export 'res/res.dart';
 export 'controller/controller.dart';
+export 'models/models.dart';
+export 'shared/widgets/widgets.dart';
+
 
 void main() {
   runApp(const MainApp());

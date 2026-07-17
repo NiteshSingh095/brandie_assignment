@@ -1,3 +1,4 @@
+/// Bottom navigation enum
 enum BottomNavigationEnum {
   notification,
   search,
@@ -6,6 +7,7 @@ enum BottomNavigationEnum {
   profile,
 }
 
+/// Ori home tab enum
 enum OriHomeTabEnum {
   smartPost,
   library,
@@ -19,3 +21,6 @@ enum OriHomeTabEnum {
         OriHomeTabEnum.shareAndWin => 'Share & Win',
       };
 }
+
+/// Sequential loader step status
+enum StepStatus { pending, inProgress, completed }
