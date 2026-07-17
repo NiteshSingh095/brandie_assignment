@@ -1,3 +1,5 @@
+import 'package:brandie/core/constants/translation_utils.dart';
+
 /// Bottom navigation enum
 enum BottomNavigationEnum {
   notification,
@@ -15,10 +17,10 @@ enum OriHomeTabEnum {
   shareAndWin;
 
   String get label => switch (this) {
-        OriHomeTabEnum.smartPost => 'Smart Post',
-        OriHomeTabEnum.library => 'Library',
-        OriHomeTabEnum.communities => 'Communities',
-        OriHomeTabEnum.shareAndWin => 'Share & Win',
+        OriHomeTabEnum.smartPost => TranslationUtils.smartPost,
+        OriHomeTabEnum.library => TranslationUtils.library,
+        OriHomeTabEnum.communities => TranslationUtils.communities,
+        OriHomeTabEnum.shareAndWin => TranslationUtils.shareAndWin,
       };
 }
 

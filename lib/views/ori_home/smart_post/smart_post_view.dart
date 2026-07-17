@@ -1,20 +1,21 @@
-import 'package:brandie/shared/widgets/sequential_loader/sequential_loader.dart';
+import 'package:brandie/main.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SmartPostView extends StatelessWidget {
   const SmartPostView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SequentialLoader(
-      title: 'Building personalised Smart Posts for you!',
+    return SequentialLoader(
+      title: TranslationUtils.sequetialLoaderTitle.tr,
       steps: [
-        'Preparing popular content for you',
-        'Crafting a caption to boost engagement',
-        'Adding your personal referral link and code',
-        'Finding trending songs on other social media',
+        TranslationUtils.sequentialLoaderStepPreparing.tr,
+        TranslationUtils.sequentialLoaderStepCaption.tr,
+        TranslationUtils.sequentialLoaderStepReferral.tr,
+        TranslationUtils.sequentialLoaderStepSongs.tr,
       ],
-      completionMessage: 'All set! Get ready to share...',
+      completionMessage: TranslationUtils.sequentialLoaderCompletion.tr,
     );
   }
 }

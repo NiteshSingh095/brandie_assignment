@@ -17,7 +17,7 @@ class OriHomeController extends GetxController with GetSingleTickerProviderState
 
   /// Tabs for the tab bar
   final List<Tab> tabs = OriHomeTabEnum.values
-      .map((tab) => Tab(text: tab.label))
+      .map((tab) => Tab(text: tab.label.tr))
       .toList();
 
   @override

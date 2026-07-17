@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'core/core.dart';
 import 'views/view.dart';
 
 export 'core/core.dart';
@@ -23,8 +24,11 @@ class MainApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (context, child) {
-        return const GetMaterialApp(
-          home: HomeView(),
+        return GetMaterialApp(
+          translations: TranslationFile(),
+          locale: const Locale('en'),
+          fallbackLocale: const Locale('en'),
+          home: const HomeView(),
         );
       },
     );
