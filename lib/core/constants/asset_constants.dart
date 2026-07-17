@@ -1,0 +1,13 @@
+class AssetConstants {
+  static const String logo = 'assets/images/oriflame_logo.png';
+
+  // Icons
+  static const String notifications = 'assets/icons/notification.svg';
+  static const String messages = 'assets/icons/message.svg';
+  static const String profile = 'assets/icons/profile.svg';
+  static const String home = 'assets/icons/oli_home.svg';
+  static const String search = 'assets/icons/search.svg';
+  static const String oriflameLogo = 'assets/icons/oriflame_logo.svg';
+  static const String aiAssistant = 'assets/icons/ai_assistant.svg';
+  static const String camera = 'assets/icons/camera.svg';
+}

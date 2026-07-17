@@ -1,0 +1,34 @@
+{
+    "cSpell.words": [
+        "debouncer",
+        "Dimens"
+    ],
+    "dart.lineLength": 100,
+    "editor.formatOnSave": true,
+    "dart.previewFlutterUiGuides": true,
+    "[dart]": {
+        "editor.defaultFormatter": "Dart-Code.dart-code",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 100,
+        "editor.rulers": [
+            100
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "dart.enableSdkFormatter": true,
+    "dart.previewCommitCharacters": true,
+    "dart.insertArgumentPlaceholders": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "dart.formatter.useTrailingCommas": true,
+    "dart.trailingComma": "all"
+}
