@@ -5,3 +5,4 @@ export 'smart_post_music_row.dart';
 export 'smart_post_page.dart';
 export 'smart_post_product_card.dart';
 export 'smart_post_share_row.dart';
+export 'post_indicator.dart';

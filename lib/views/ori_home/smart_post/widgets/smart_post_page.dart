@@ -1,11 +1,7 @@
 import 'package:brandie/controller/smart_post/smart_post.dart';
 import 'package:brandie/models/smart_post/smart_post.dart';
 import 'package:brandie/res/res.dart';
-import 'package:brandie/views/ori_home/smart_post/widgets/smart_post_caption.dart';
-import 'package:brandie/views/ori_home/smart_post/widgets/smart_post_header.dart';
-import 'package:brandie/views/ori_home/smart_post/widgets/smart_post_music_row.dart';
-import 'package:brandie/views/ori_home/smart_post/widgets/smart_post_product_card.dart';
-import 'package:brandie/views/ori_home/smart_post/widgets/smart_post_share_row.dart';
+import 'package:brandie/views/ori_home/smart_post/smart_post.dart';
 import 'package:flutter/material.dart';
 
 class SmartPostPage extends StatelessWidget {
@@ -26,6 +22,8 @@ class SmartPostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final topChromeHeight = MediaQuery.paddingOf(context).top + Dimens.eighty + kTextTabBarHeight;
+
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => controller.onPostTap(post),
@@ -42,12 +40,7 @@ class SmartPostPage extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [
-                  Colors.black26,
-                  Colors.transparent,
-                  Colors.transparent,
-                  Colors.black54,
-                ],
+                colors: [Colors.black26, Colors.transparent, Colors.transparent, Colors.black54],
                 stops: [0, 0.25, 0.55, 1],
               ),
             ),
@@ -81,12 +74,19 @@ class SmartPostPage extends StatelessWidget {
                   onEdit: () => controller.onEditCaption(post),
                 ),
                 Dimens.boxHeight(Dimens.fourteen),
-                SmartPostShareRow(
-                  platforms: post.sharePlatforms,
-                  onShare: controller.onShare,
-                ),
+                SmartPostShareRow(platforms: post.sharePlatforms, onShare: controller.onShare),
                 Dimens.boxHeight(Dimens.twenty),
               ],
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(0, -topChromeHeight / 2),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: Dimens.edgeInsets(right: Dimens.eight),
+                child: PostIndicator(itemCount: total, currentIndex: index),
+              ),
             ),
           ),
         ],
