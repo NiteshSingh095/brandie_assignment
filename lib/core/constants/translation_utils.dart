@@ -32,4 +32,10 @@ class TranslationUtils {
   static const String quickShareTo = 'quick_share_to';
   static const String recommendedPrefix = 'recommended_prefix';
   static const String ofLabel = 'of_label';
+
+  // Share loader
+  static const String generatingSalesLink = 'generating_sales_link';
+  static const String copyingCaption = 'copying_caption';
+  static const String savingContent = 'saving_content';
+  static const String preparingSocialContent = 'preparing_social_content';
 }

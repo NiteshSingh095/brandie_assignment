@@ -14,4 +14,6 @@ class AssetConstants {
 
   // Smart post share platforms (social_sharing_plus supported)
   static const String facebook = 'assets/images/smart_post/Facebook.png';
+  static const String whatsapp = 'assets/images/smart_post/whatsapp.png';
+  static const String telegram = 'assets/images/smart_post/telegram.png';
 }

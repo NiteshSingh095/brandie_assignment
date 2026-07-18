@@ -13,14 +13,14 @@ class SmartPostShareRow extends StatelessWidget {
   String? _assetFor(String platform) {
     return switch (platform.toLowerCase()) {
       'facebook' => AssetConstants.facebook,
+      'whatsapp' => AssetConstants.whatsapp,
+      'telegram' => AssetConstants.telegram,
       _ => null,
     };
   }
 
   IconData _iconFor(String platform) {
     return switch (platform.toLowerCase()) {
-      'whatsapp' => Icons.chat,
-      'telegram' => Icons.send,
       'twitter' => Icons.alternate_email,
       'linkedin' => Icons.business_center,
       'reddit' => Icons.forum,
@@ -30,8 +30,6 @@ class SmartPostShareRow extends StatelessWidget {
 
   Color _colorFor(String platform) {
     return switch (platform.toLowerCase()) {
-      'whatsapp' => const Color(0xFF25D366),
-      'telegram' => const Color(0xFF0088CC),
       'twitter' => const Color(0xFF1DA1F2),
       'linkedin' => const Color(0xFF0A66C2),
       'reddit' => const Color(0xFFFF4500),

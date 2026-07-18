@@ -39,6 +39,15 @@ class TranslationFile extends Translations {
           TranslationUtils.quickShareTo: 'Quick share to:',
           TranslationUtils.recommendedPrefix: 'RECOMMENDED:',
           TranslationUtils.ofLabel: 'of',
+
+          // Share loader
+          TranslationUtils.generatingSalesLink: 'Generating your sales link...',
+          TranslationUtils.copyingCaption:
+              'Copying the caption to clipboard',
+          TranslationUtils.savingContent:
+              'Saving the content to your profile',
+          TranslationUtils.preparingSocialContent:
+              'Preparing the content for social media',
         },
       };
 }

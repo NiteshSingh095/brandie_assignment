@@ -1,9 +1,12 @@
+import 'package:brandie/core/constants/translation_utils.dart';
 import 'package:brandie/models/smart_post/smart_post.dart';
 import 'package:brandie/shared/enums.dart';
+import 'package:brandie/shared/widgets/share_loader/share_loader.dart';
 import 'package:brandie/utils/navigation/route_management.dart';
 import 'package:brandie/utils/social_share_utility.dart';
 import 'package:brandie/utils/url_launcher_utility.dart';
 import 'package:brandie/view_model/smart_post/smart_post.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class SmartPostController extends GetxController {
@@ -19,6 +22,7 @@ class SmartPostController extends GetxController {
   int currentIndex = 0;
   final Set<String> _expandedCaptionIds = {};
   bool isLoadingPosts = false;
+  bool _isSharing = false;
   String? errorMessage;
 
   SmartPostModel? get currentPost =>
@@ -79,19 +83,46 @@ class SmartPostController extends GetxController {
   }
 
   Future<void> onShare(String platform) async {
+    if (_isSharing) return;
+
     final post = currentPost;
     if (post == null) return;
 
+    _isSharing = true;
     final content = [
       post.caption,
       if (post.referralLink != null && post.referralLink!.isNotEmpty)
         post.referralLink,
     ].join('\n\n');
 
-    await SocialShareUtility.share(
-      platform: platform,
-      content: content,
-      mediaAssetPath: post.backgroundImage,
-    );
+    try {
+      final shouldShare = await Get.dialog<bool>(
+        ShareLoader(
+          steps: [
+            TranslationUtils.generatingSalesLink.tr,
+            TranslationUtils.copyingCaption.tr,
+            TranslationUtils.savingContent.tr,
+            TranslationUtils.preparingSocialContent.tr,
+          ],
+          onStep: (index) async {
+            if (index == 1) {
+              await Clipboard.setData(ClipboardData(text: content));
+            }
+          },
+          onCompleted: () => Get.back(result: true),
+        ),
+        barrierDismissible: false,
+      );
+
+      if (shouldShare == true) {
+        await SocialShareUtility.share(
+          platform: platform,
+          content: content,
+          mediaAssetPath: post.backgroundImage,
+        );
+      }
+    } finally {
+      _isSharing = false;
+    }
   }
 }
