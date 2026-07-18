@@ -17,31 +17,37 @@ class OriHomeView extends StatelessWidget {
         }
       },
       builder: (controller) {
-        return Column(
-          children: [
-            TabBar(
-              controller: controller.tabController,
-              tabs: controller.tabs,
-              overlayColor: WidgetStateProperty.all(Colors.white),
-              dividerColor: Colors.transparent,
-              tabAlignment: TabAlignment.start,
-              indicatorColor: Colors.transparent,
-              labelStyle: TextStyle(
-                color: Colors.green,
-                fontSize: Dimens.fourteen,
-                fontWeight: FontWeight.w700,
+        return ColoredBox(
+          color: Colors.white,
+          child: Column(
+            children: [
+              TabBar(
+                controller: controller.tabController,
+                tabs: controller.tabs,
+                overlayColor: WidgetStateProperty.all(Colors.white),
+                dividerColor: Colors.transparent,
+                tabAlignment: TabAlignment.start,
+                indicatorColor: Colors.transparent,
+                labelStyle: TextStyle(
+                  color: Colors.green,
+                  fontSize: Dimens.fourteen,
+                  fontWeight: FontWeight.w700,
+                ),
+                unselectedLabelStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: Dimens.fourteen,
+                  fontWeight: FontWeight.w700,
+                ),
+                isScrollable: true,
               ),
-              unselectedLabelStyle: TextStyle(
-                color: Colors.black,
-                fontSize: Dimens.fourteen,
-                fontWeight: FontWeight.w700,
+              Expanded(
+                child: TabBarView(
+                  controller: controller.tabController,
+                  children: controller.pages,
+                ),
               ),
-              isScrollable: true,
-            ),
-            Expanded(
-              child: TabBarView(controller: controller.tabController, children: controller.pages),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );
