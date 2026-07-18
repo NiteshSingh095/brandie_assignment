@@ -26,67 +26,71 @@ class SmartPostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        Image.asset(
-          post.backgroundImage,
-          fit: BoxFit.cover,
-          errorBuilder: (_, error, stackTrace) => Container(color: Colors.black87),
-        ),
-        const DecoratedBox(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.black26,
-                Colors.transparent,
-                Colors.transparent,
-                Colors.black54,
-              ],
-              stops: [0, 0.25, 0.55, 1],
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => controller.onPostTap(post),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            post.backgroundImage,
+            fit: BoxFit.cover,
+            errorBuilder: (_, error, stackTrace) => Container(color: Colors.black87),
+          ),
+          const DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black26,
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.black54,
+                ],
+                stops: [0, 0.25, 0.55, 1],
+              ),
             ),
           ),
-        ),
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Dimens.boxHeight(Dimens.twelve),
-              SmartPostHeader(post: post, index: index, total: total),
-              const Spacer(),
-              if (post.product != null) ...[
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: SmartPostProductCard(
-                    product: post.product!,
-                    isActive: isActive,
-                    onTap: () => controller.onProductTap(post),
-                  ),
-                ),
+          SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
                 Dimens.boxHeight(Dimens.twelve),
+                SmartPostHeader(post: post, index: index, total: total),
+                const Spacer(),
+                if (post.product != null) ...[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: SmartPostProductCard(
+                      product: post.product!,
+                      isActive: isActive,
+                      onTap: () => controller.onPostTap(post),
+                    ),
+                  ),
+                  Dimens.boxHeight(Dimens.twelve),
+                ],
+                if (post.music != null) ...[
+                  SmartPostMusicRow(music: post.music!),
+                  Dimens.boxHeight(Dimens.ten),
+                ],
+                SmartPostCaption(
+                  post: post,
+                  isExpanded: controller.isCaptionExpanded(post.id),
+                  onToggle: () => controller.toggleCaption(post.id),
+                  onEdit: () => controller.onEditCaption(post),
+                ),
+                Dimens.boxHeight(Dimens.fourteen),
+                SmartPostShareRow(
+                  platforms: post.sharePlatforms,
+                  onShare: controller.onShare,
+                ),
+                Dimens.boxHeight(Dimens.twenty),
               ],
-              if (post.music != null) ...[
-                SmartPostMusicRow(music: post.music!),
-                Dimens.boxHeight(Dimens.ten),
-              ],
-              SmartPostCaption(
-                post: post,
-                isExpanded: controller.isCaptionExpanded(post.id),
-                onToggle: () => controller.toggleCaption(post.id),
-                onEdit: () => controller.onEditCaption(post),
-              ),
-              Dimens.boxHeight(Dimens.fourteen),
-              SmartPostShareRow(
-                platforms: post.sharePlatforms,
-                onShare: controller.onShare,
-              ),
-              Dimens.boxHeight(Dimens.twenty),
-            ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

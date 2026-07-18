@@ -1,6 +1,7 @@
 import 'package:brandie/models/smart_post/smart_post.dart';
 import 'package:brandie/shared/enums.dart';
 import 'package:brandie/utils/navigation/route_management.dart';
+import 'package:brandie/utils/url_launcher_utility.dart';
 import 'package:brandie/view_model/smart_post/smart_post.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
@@ -61,9 +62,8 @@ class SmartPostController extends GetxController {
     update([updateId]);
   }
 
-  void onProductTap(SmartPostModel post) {
-    final link = post.product?.storeLink;
-    debugPrint('Product tapped: ${post.product?.name} → $link');
+  Future<void> onPostTap(SmartPostModel post) async {
+    await UrlLauncherUtility.launch(post.product?.storeLink);
   }
 
   void onEditCaption(SmartPostModel post) {

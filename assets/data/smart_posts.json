@@ -12,7 +12,7 @@
         "price": "$14.99",
         "discount_label": "30% off",
         "trending_text": null,
-        "store_link": "https://example.com/store/giordani-gold"
+        "store_link": "https://in.oriflame.com/"
       },
       "music": {
         "label": "Bad Habits by Ed Sheeran"
@@ -39,7 +39,7 @@
         "price": "$14.99",
         "discount_label": "30% off",
         "trending_text": null,
-        "store_link": "https://example.com/store/giordani-gold"
+        "store_link": "https://in.oriflame.com/"
       },
       "music": {
         "label": "Unstoppable by Sia"
@@ -66,7 +66,7 @@
         "price": "$14.99",
         "discount_label": "30% off",
         "trending_text": "Trending right now and on sale 30% off",
-        "store_link": "https://example.com/store/giordani-gold"
+        "store_link": "https://in.oriflame.com/"
       },
       "music": {
         "label": "Vogue by Madonna"
