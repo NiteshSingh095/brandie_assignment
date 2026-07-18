@@ -9,6 +9,8 @@ export 'views/view.dart';
 export 'res/res.dart';
 export 'controller/controller.dart';
 export 'models/models.dart';
+export 'repository/repository.dart';
+export 'view_model/view_model.dart';
 export 'shared/widgets/widgets.dart';
 
 

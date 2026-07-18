@@ -30,6 +30,14 @@ class TranslationFile extends Translations {
           TranslationUtils.search: 'Search',
           TranslationUtils.messages: 'Messages',
           TranslationUtils.profile: 'Profile',
+
+          // Smart post feed chrome
+          TranslationUtils.seeMore: 'see more',
+          TranslationUtils.seeLess: 'see less',
+          TranslationUtils.editCaption: 'Edit Caption',
+          TranslationUtils.quickShareTo: 'Quick share to:',
+          TranslationUtils.recommendedPrefix: 'RECOMMENDED:',
+          TranslationUtils.ofLabel: 'of',
         },
       };
 }

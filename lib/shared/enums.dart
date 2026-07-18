@@ -26,3 +26,6 @@ enum OriHomeTabEnum {
 
 /// Sequential loader step status
 enum StepStatus { pending, inProgress, completed }
+
+/// Smart post screen phase
+enum SmartPostPhase { loading, ready }

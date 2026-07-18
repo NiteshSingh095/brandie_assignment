@@ -23,4 +23,12 @@ class TranslationUtils {
   static const String search = 'search';
   static const String messages = 'messages';
   static const String profile = 'profile';
+
+  // Smart post feed chrome
+  static const String seeMore = 'see_more';
+  static const String seeLess = 'see_less';
+  static const String editCaption = 'edit_caption';
+  static const String quickShareTo = 'quick_share_to';
+  static const String recommendedPrefix = 'recommended_prefix';
+  static const String ofLabel = 'of_label';
 }

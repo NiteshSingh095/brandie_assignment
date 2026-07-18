@@ -23,4 +23,6 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/smart_post/
     - assets/icons/
+    - assets/data/smart_posts.json
