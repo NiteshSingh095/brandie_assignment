@@ -15,7 +15,9 @@ export 'shared/widgets/widgets.dart';
 export 'utils/utils.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ScreenUtil.ensureScreenSize();
   runApp(const MainApp());
 }
 
@@ -25,6 +27,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      useInheritedMediaQuery: true,
       designSize: const Size(375, 812),
       builder: (context, child) {
         return GetMaterialApp(
