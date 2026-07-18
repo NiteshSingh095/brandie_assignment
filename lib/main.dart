@@ -28,6 +28,7 @@ class MainApp extends StatelessWidget {
       designSize: const Size(375, 812),
       builder: (context, child) {
         return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           translations: TranslationFile(),
           locale: const Locale('en'),
           fallbackLocale: const Locale('en'),

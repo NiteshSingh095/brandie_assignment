@@ -12,6 +12,8 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.3.0
   get: ^4.7.3
+  path_provider: ^2.1.6
+  social_sharing_plus: ^1.2.3
   url_launcher: ^6.3.2
 
 dev_dependencies:

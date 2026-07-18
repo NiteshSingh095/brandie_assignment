@@ -51,6 +51,14 @@
 		<string>http</string>
 		<string>sms</string>
 		<string>tel</string>
+		<string>fb</string>
+		<string>facebook</string>
+		<string>twitter</string>
+		<string>linkedin</string>
+		<string>whatsapp</string>
+		<string>tg</string>
+		<string>telegram</string>
+		<string>reddit</string>
 	</array>
 </dict>
 </plist>

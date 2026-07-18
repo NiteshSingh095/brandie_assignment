@@ -11,4 +11,7 @@ class AssetConstants {
   static const String aiAssistant = 'assets/icons/ai_assistant.svg';
   static const String camera = 'assets/icons/camera.svg';
   static const String profileImg = 'assets/images/profile_img.svg';
+
+  // Smart post share platforms (social_sharing_plus supported)
+  static const String facebook = 'assets/images/smart_post/Facebook.png';
 }

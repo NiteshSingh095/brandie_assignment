@@ -1,35 +1,41 @@
+import 'package:brandie/core/constants/asset_constants.dart';
 import 'package:brandie/core/constants/translation_utils.dart';
 import 'package:brandie/res/res.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SmartPostShareRow extends StatelessWidget {
-  const SmartPostShareRow({
-    super.key,
-    required this.platforms,
-    required this.onShare,
-  });
+  const SmartPostShareRow({super.key, required this.platforms, required this.onShare});
 
   final List<String> platforms;
   final ValueChanged<String> onShare;
 
+  String? _assetFor(String platform) {
+    return switch (platform.toLowerCase()) {
+      'facebook' => AssetConstants.facebook,
+      _ => null,
+    };
+  }
+
   IconData _iconFor(String platform) {
     return switch (platform.toLowerCase()) {
-      'instagram' => Icons.camera_alt_outlined,
-      'facebook' => Icons.facebook,
-      'messenger' => Icons.chat_bubble_outline,
-      'tiktok' => Icons.music_note,
+      'whatsapp' => Icons.chat,
+      'telegram' => Icons.send,
+      'twitter' => Icons.alternate_email,
+      'linkedin' => Icons.business_center,
+      'reddit' => Icons.forum,
       _ => Icons.share,
     };
   }
 
   Color _colorFor(String platform) {
     return switch (platform.toLowerCase()) {
-      'instagram' => const Color(0xFFE1306C),
-      'facebook' => const Color(0xFF1877F2),
-      'messenger' => const Color(0xFF00B2FF),
-      'tiktok' => Colors.black,
-      _ => Colors.grey,
+      'whatsapp' => const Color(0xFF25D366),
+      'telegram' => const Color(0xFF0088CC),
+      'twitter' => const Color(0xFF1DA1F2),
+      'linkedin' => const Color(0xFF0A66C2),
+      'reddit' => const Color(0xFFFF4500),
+      _ => Colors.white,
     };
   }
 
@@ -49,20 +55,37 @@ class SmartPostShareRow extends StatelessWidget {
             ),
           ),
           Dimens.boxWidth(Dimens.ten),
-          ...platforms.map(
-            (platform) => Padding(
-              padding: Dimens.edgeInsets(right: Dimens.eight),
-              child: GestureDetector(
-                onTap: () => onShare(platform),
-                child: CircleAvatar(
-                  radius: Dimens.eighteen,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    _iconFor(platform),
-                    size: Dimens.eighteen,
-                    color: _colorFor(platform),
-                  ),
-                ),
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              child: Row(
+                children: platforms.map((platform) {
+                  final asset = _assetFor(platform);
+                  return Padding(
+                    padding: Dimens.edgeInsets(right: Dimens.eight),
+                    child: GestureDetector(
+                      onTap: () => onShare(platform),
+                      child: Container(
+                        width: Dimens.forty,
+                        height: Dimens.forty,
+                        padding: Dimens.edgeInsetsAll(Dimens.eight),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.25),
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.white),
+                        ),
+                        child: asset == null
+                            ? Icon(
+                                _iconFor(platform),
+                                size: Dimens.twenty,
+                                color: _colorFor(platform),
+                              )
+                            : Image.asset(asset, fit: BoxFit.contain),
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
           ),

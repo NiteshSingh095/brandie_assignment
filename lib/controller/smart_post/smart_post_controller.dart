@@ -1,9 +1,9 @@
 import 'package:brandie/models/smart_post/smart_post.dart';
 import 'package:brandie/shared/enums.dart';
 import 'package:brandie/utils/navigation/route_management.dart';
+import 'package:brandie/utils/social_share_utility.dart';
 import 'package:brandie/utils/url_launcher_utility.dart';
 import 'package:brandie/view_model/smart_post/smart_post.dart';
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class SmartPostController extends GetxController {
@@ -78,7 +78,20 @@ class SmartPostController extends GetxController {
     update([updateId]);
   }
 
-  void onShare(String platform) {
-    debugPrint('Share to $platform');
+  Future<void> onShare(String platform) async {
+    final post = currentPost;
+    if (post == null) return;
+
+    final content = [
+      post.caption,
+      if (post.referralLink != null && post.referralLink!.isNotEmpty)
+        post.referralLink,
+    ].join('\n\n');
+
+    await SocialShareUtility.share(
+      platform: platform,
+      content: content,
+      mediaAssetPath: post.backgroundImage,
+    );
   }
 }
