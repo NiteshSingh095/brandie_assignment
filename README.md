@@ -74,6 +74,28 @@ assets/
 - Multi-platform social sharing (Facebook, WhatsApp, Telegram, Twitter, LinkedIn, Reddit) with a staged share loader that copies the caption to the clipboard before opening the target app.
 - Centralized localization via `TranslationUtils` + `TranslationFile`.
 
+## Quick Demo (Prebuilt APK)
+
+A ready-to-install release APK is included for quick testing and demos on any Android device, no build setup required:
+
+```
+build/app/outputs/flutter-apk/app-release.apk
+```
+
+To install it:
+
+1. Copy `app-release.apk` to your Android device (USB, email, cloud, etc.).
+2. On the device, enable **Install unknown apps** for the file manager/browser you use to open it.
+3. Tap the APK and follow the prompts to install.
+
+Alternatively, with the device connected via USB and USB debugging enabled:
+
+```bash
+adb install build/app/outputs/flutter-apk/app-release.apk
+```
+
+> This APK is for testing/demo purposes only. To run on iOS or make code changes, follow the development setup below.
+
 ## Getting Started
 
 ### Prerequisites
