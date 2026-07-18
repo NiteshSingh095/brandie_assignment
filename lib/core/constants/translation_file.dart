@@ -35,6 +35,7 @@ class TranslationFile extends Translations {
           TranslationUtils.seeMore: 'see more',
           TranslationUtils.seeLess: 'see less',
           TranslationUtils.editCaption: 'Edit Caption',
+          TranslationUtils.save: 'Save',
           TranslationUtils.quickShareTo: 'Quick share to:',
           TranslationUtils.recommendedPrefix: 'RECOMMENDED:',
           TranslationUtils.ofLabel: 'of',

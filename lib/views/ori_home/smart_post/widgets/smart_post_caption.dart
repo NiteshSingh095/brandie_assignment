@@ -31,20 +31,39 @@ class SmartPostCaption extends StatelessWidget {
           borderRadius: BorderRadius.circular(Dimens.ten),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              post.caption,
-              maxLines: isExpanded ? null : _collapsedMaxLines,
-              overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: Dimens.twelve,
-                fontWeight: FontWeight.w400,
-                height: 1.35,
-                shadows: const [Shadow(blurRadius: 4, color: Colors.black54)],
+            if (isExpanded)
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: Dimens.oneHundredFifty),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Text(
+                    post.caption,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: Dimens.twelve,
+                      fontWeight: FontWeight.w400,
+                      height: 1.35,
+                      shadows: const [Shadow(blurRadius: 4, color: Colors.black54)],
+                    ),
+                  ),
+                ),
+              )
+            else
+              Text(
+                post.caption,
+                maxLines: _collapsedMaxLines,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: Dimens.twelve,
+                  fontWeight: FontWeight.w400,
+                  height: 1.35,
+                  shadows: const [Shadow(blurRadius: 4, color: Colors.black54)],
+                ),
               ),
-            ),
             Dimens.boxHeight(Dimens.six),
             Row(
               children: [

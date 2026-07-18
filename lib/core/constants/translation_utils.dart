@@ -28,6 +28,7 @@ class TranslationUtils {
   static const String seeMore = 'see_more';
   static const String seeLess = 'see_less';
   static const String editCaption = 'edit_caption';
+  static const String save = 'save';
   static const String quickShareTo = 'quick_share_to';
   static const String recommendedPrefix = 'recommended_prefix';
   static const String ofLabel = 'of_label';

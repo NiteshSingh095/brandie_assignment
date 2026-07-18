@@ -67,4 +67,20 @@ class SmartPostModel {
         'referral_link': referralLink,
         'share_platforms': sharePlatforms,
       };
+
+  SmartPostModel copyWith({String? caption}) {
+    return SmartPostModel(
+      id: id,
+      backgroundImage: backgroundImage,
+      profileImage: profileImage,
+      statusBadge: statusBadge,
+      communityLine: communityLine,
+      product: product,
+      music: music,
+      caption: caption ?? this.caption,
+      referralCode: referralCode,
+      referralLink: referralLink,
+      sharePlatforms: sharePlatforms,
+    );
+  }
 }

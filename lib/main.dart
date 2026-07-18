@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'core/core.dart';
-import 'views/view.dart';
+import 'utils/utils.dart';
 
 export 'core/core.dart';
 export 'views/view.dart';
@@ -12,6 +12,7 @@ export 'models/models.dart';
 export 'repository/repository.dart';
 export 'view_model/view_model.dart';
 export 'shared/widgets/widgets.dart';
+export 'utils/utils.dart';
 
 
 void main() {
@@ -30,7 +31,8 @@ class MainApp extends StatelessWidget {
           translations: TranslationFile(),
           locale: const Locale('en'),
           fallbackLocale: const Locale('en'),
-          home: const HomeView(),
+          initialRoute: AppRoutes.home,
+          getPages: AppPages.pages,
         );
       },
     );

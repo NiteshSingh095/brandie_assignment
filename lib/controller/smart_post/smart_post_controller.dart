@@ -1,5 +1,6 @@
 import 'package:brandie/models/smart_post/smart_post.dart';
 import 'package:brandie/shared/enums.dart';
+import 'package:brandie/utils/navigation/route_management.dart';
 import 'package:brandie/view_model/smart_post/smart_post.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
@@ -66,7 +67,15 @@ class SmartPostController extends GetxController {
   }
 
   void onEditCaption(SmartPostModel post) {
-    debugPrint('Edit caption for post ${post.id}');
+    RouteManagement.toEditCaption(post.id);
+  }
+
+  void updateCaption(String postId, String caption) {
+    final index = posts.indexWhere((post) => post.id == postId);
+    if (index < 0) return;
+
+    posts[index] = posts[index].copyWith(caption: caption);
+    update([updateId]);
   }
 
   void onShare(String platform) {
