@@ -57,10 +57,13 @@ class SmartPostPage extends StatelessWidget {
               SmartPostHeader(post: post, index: index, total: total),
               const Spacer(),
               if (post.product != null) ...[
-                SmartPostProductCard(
-                  product: post.product!,
-                  isActive: isActive,
-                  onTap: () => controller.onProductTap(post),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SmartPostProductCard(
+                    product: post.product!,
+                    isActive: isActive,
+                    onTap: () => controller.onProductTap(post),
+                  ),
                 ),
                 Dimens.boxHeight(Dimens.twelve),
               ],

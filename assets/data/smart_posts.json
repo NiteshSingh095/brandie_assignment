@@ -6,23 +6,8 @@
       "profile_image": "assets/images/smart_post/profile.png",
       "status_badge": "Ready to share",
       "community_line": "High-converting in Oriflame Community",
-      "product": null,
-      "music": {
-        "label": "Bad Habits by Ed Sheeran"
-      },
-      "caption": "✨ Glow with Giordani Gold! Soft matte finish, rich pigment, and all-day comfort. Perfect for every look — day to night. Use my code UK-AMANDA3012 and shop via my link: https://ori.beauty/amanda",
-      "referral_code": "UK-AMANDA3012",
-      "referral_link": "https://ori.beauty/amanda",
-      "share_platforms": ["instagram", "facebook", "messenger", "tiktok"]
-    },
-    {
-      "id": "2",
-      "background_image": "assets/images/smart_post/post_2_bg.png",
-      "profile_image": "assets/images/smart_post/profile.png",
-      "status_badge": "Ready to share",
-      "community_line": "High-converting in Oriflame Community",
       "product": {
-        "thumbnail": "assets/images/smart_post/product_1.png",
+        "thumbnail": "assets/images/smart_post/product.png",
         "name": "Giordani Gold Lipstick",
         "price": "$14.99",
         "discount_label": "30% off",
@@ -32,10 +17,42 @@
       "music": {
         "label": "Bad Habits by Ed Sheeran"
       },
-      "caption": "✨ Glow with Giordani Gold! Soft matte finish, rich pigment, and all-day comfort. Perfect for every look — day to night. Use my code UK-AMANDA3012 and shop via my link: https://ori.beauty/amanda",
+      "caption": "✨ Glow with Giordani Gold! Soft matte finish, rich pigment, and all-day comfort. 💄Elevate your beauty with the Giordani Gold - Eternal Glow Lipstick SPF 25! This luxurious creamy lipstick doesn't just promise rich pigments but brings you the benefits of hyaluronic acid and collagen-boosting peptides too. Pamper your lips with care while enjoying a long-lasting, luminous matte colour. 💋 ✨ #Oriflame #GiordaniGold #LipCareGoals Use my referral code: UK-AMANDA3012 Use my referral link: www.oriflame.com/giordani/amada3012",
       "referral_code": "UK-AMANDA3012",
       "referral_link": "https://ori.beauty/amanda",
-      "share_platforms": ["instagram", "facebook", "messenger", "tiktok"]
+      "share_platforms": [
+        "instagram",
+        "facebook",
+        "messenger",
+        "tiktok"
+      ]
+    },
+    {
+      "id": "2",
+      "background_image": "assets/images/smart_post/post_2_bg.png",
+      "profile_image": "assets/images/smart_post/profile.png",
+      "status_badge": "Ready to share",
+      "community_line": "High-converting in Oriflame Community",
+      "product": {
+        "thumbnail": "assets/images/smart_post/product.png",
+        "name": "Giordani Gold Lipstick",
+        "price": "$14.99",
+        "discount_label": "30% off",
+        "trending_text": null,
+        "store_link": "https://example.com/store/giordani-gold"
+      },
+      "music": {
+        "label": "Unstoppable by Sia"
+      },
+      "caption": "✨ Experience the elegance of Eclat Amour—a fragrance that captures the essence of romance and sophistication. Let every spritz wrap you in timeless charm and effortless allure. 💕 #EclatAmour #TimelessElegance. Use my referral code: UK-AMANDA3012 Use my referral link: www.oriflame.com/giordani/amada3012",
+      "referral_code": "UK-AMANDA3012",
+      "referral_link": "https://ori.beauty/amanda",
+      "share_platforms": [
+        "instagram",
+        "facebook",
+        "messenger",
+        "tiktok"
+      ]
     },
     {
       "id": "3",
@@ -44,7 +61,7 @@
       "status_badge": "Ready to share",
       "community_line": "High-converting in Oriflame Community",
       "product": {
-        "thumbnail": "assets/images/smart_post/product_2.png",
+        "thumbnail": "assets/images/smart_post/product.png",
         "name": "Giordani Gold Lipstick",
         "price": "$14.99",
         "discount_label": "30% off",
@@ -52,12 +69,17 @@
         "store_link": "https://example.com/store/giordani-gold"
       },
       "music": {
-        "label": "Bad Habits by Ed Sheeran"
+        "label": "Vogue by Madonna"
       },
-      "caption": "✨ Glow with Giordani Gold! Soft matte finish, rich pigment, and all-day comfort. Perfect for every look — day to night. Use my code UK-AMANDA3012 and shop via my link: https://ori.beauty/amanda",
+      "caption": "Unlock the power of bold, beautiful lashes! With WonderLash Mascara, get ultimate length, volume, and definition for a stunning, eye-catching look. One swipe is all it takes! 💖 #WonderLash #LashesForDays Use my referral code: UK-AMANDA3012 Use my referral link: www.oriflame.com/giordani/amada3012",
       "referral_code": "UK-AMANDA3012",
       "referral_link": "https://ori.beauty/amanda",
-      "share_platforms": ["instagram", "facebook", "messenger", "tiktok"]
+      "share_platforms": [
+        "instagram",
+        "facebook",
+        "messenger",
+        "tiktok"
+      ]
     }
   ]
 }

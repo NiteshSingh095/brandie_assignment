@@ -10,4 +10,5 @@ class AssetConstants {
   static const String oriflameLogo = 'assets/icons/oriflame_logo.svg';
   static const String aiAssistant = 'assets/icons/ai_assistant.svg';
   static const String camera = 'assets/icons/camera.svg';
+  static const String profileImg = 'assets/images/profile_img.svg';
 }

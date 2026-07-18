@@ -16,6 +16,7 @@ class HomeView extends StatelessWidget {
       init: HomeController(),
       builder: (controller) {
         return Scaffold(
+          extendBody: true,
           appBar: const HomeAppBar(),
           bottomNavigationBar: const BottomNavigation(),
           body: controller.pages[controller.selectedIndex],

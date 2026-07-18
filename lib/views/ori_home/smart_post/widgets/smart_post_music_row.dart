@@ -11,8 +11,13 @@ class SmartPostMusicRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: Dimens.edgeInsetsSymmetric(horizontal: Dimens.sixteen),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: Dimens.ten, vertical: Dimens.four),
+      margin: EdgeInsets.symmetric(horizontal: Dimens.sixteen),
+      decoration: BoxDecoration(
+        color: Colors.black.withValues(alpha: 0.3),
+        borderRadius: BorderRadius.circular(Dimens.ten),
+      ),
       child: Row(
         children: [
           Icon(Icons.music_note, color: Colors.white, size: Dimens.eighteen),
@@ -26,7 +31,7 @@ class SmartPostMusicRow extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 shadows: const [Shadow(blurRadius: 4, color: Colors.black54)],
               ),
-              maxLines: 1,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
           ),

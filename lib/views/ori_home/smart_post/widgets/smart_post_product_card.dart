@@ -27,10 +27,7 @@ class _SmartPostProductCardState extends State<SmartPostProductCard>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 450),
-    );
+    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 450));
     _opacity = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
     _slide = Tween<Offset>(
       begin: const Offset(0, 0.25),
@@ -54,7 +51,7 @@ class _SmartPostProductCardState extends State<SmartPostProductCard>
   }
 
   Future<void> _scheduleShow() async {
-    await Future<void>.delayed(const Duration(seconds: 3));
+    await Future<void>.delayed(const Duration(seconds: 2));
     if (!mounted || !widget.isActive) return;
     _controller.forward();
   }
@@ -68,8 +65,7 @@ class _SmartPostProductCardState extends State<SmartPostProductCard>
   @override
   Widget build(BuildContext context) {
     final product = widget.product;
-    final hasTrending =
-        product.trendingText != null && product.trendingText!.isNotEmpty;
+    final hasTrending = product.trendingText != null && product.trendingText!.isNotEmpty;
 
     return FadeTransition(
       opacity: _opacity,
@@ -81,10 +77,11 @@ class _SmartPostProductCardState extends State<SmartPostProductCard>
             margin: Dimens.edgeInsetsSymmetric(horizontal: Dimens.sixteen),
             padding: Dimens.edgeInsetsAll(Dimens.twelve),
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.45),
+              color: Colors.white.withValues(alpha: 0.25),
               borderRadius: BorderRadius.circular(Dimens.twelve),
             ),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(Dimens.eight),
@@ -101,8 +98,10 @@ class _SmartPostProductCardState extends State<SmartPostProductCard>
                   ),
                 ),
                 Dimens.boxWidth(Dimens.twelve),
-                Expanded(
+                Flexible(
+                  fit: FlexFit.loose,
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -125,6 +124,7 @@ class _SmartPostProductCardState extends State<SmartPostProductCard>
                         )
                       else
                         Row(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             if (product.price != null)
                               Text(
@@ -143,9 +143,8 @@ class _SmartPostProductCardState extends State<SmartPostProductCard>
                                   vertical: Dimens.two,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF4CAF50),
-                                  borderRadius:
-                                      BorderRadius.circular(Dimens.twelve),
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.circular(Dimens.eight),
                                 ),
                                 child: Text(
                                   product.discountLabel!,
