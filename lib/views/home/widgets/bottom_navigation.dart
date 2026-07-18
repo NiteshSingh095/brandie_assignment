@@ -16,6 +16,7 @@ class BottomNavigation extends StatelessWidget {
           selectedIndex: controller.selectedIndex,
           onDestinationSelected: controller.changeIndex,
           destinations: controller.bottomNavigationItems,
+          indicatorColor: Colors.transparent,
           backgroundColor: Colors.transparent,
           surfaceTintColor: Colors.transparent,
           shadowColor: Colors.transparent,

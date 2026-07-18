@@ -22,27 +22,42 @@ class HomeController extends GetxController {
   final List<NavigationDestination> bottomNavigationItems = [
     NavigationDestination(
       icon: SvgPicture.asset(AssetConstants.notifications),
-      selectedIcon: SvgPicture.asset(AssetConstants.notifications),
+      selectedIcon: SvgPicture.asset(
+        AssetConstants.notifications,
+        colorFilter: const ColorFilter.mode(Colors.green, BlendMode.srcIn),
+      ),
       label: '',
     ),
     NavigationDestination(
       icon: SvgPicture.asset(AssetConstants.search),
-      selectedIcon: SvgPicture.asset(AssetConstants.search),
+      selectedIcon: SvgPicture.asset(
+        AssetConstants.search,
+        colorFilter: const ColorFilter.mode(Colors.green, BlendMode.srcIn),
+      ),
       label: '',
     ),
     NavigationDestination(
       icon: SvgPicture.asset(AssetConstants.home),
-      selectedIcon: SvgPicture.asset(AssetConstants.home),
+      selectedIcon: SvgPicture.asset(
+        AssetConstants.home,
+        colorFilter: const ColorFilter.mode(Colors.green, BlendMode.srcIn),
+      ),
       label: '',
     ),
     NavigationDestination(
       icon: SvgPicture.asset(AssetConstants.messages),
-      selectedIcon: SvgPicture.asset(AssetConstants.messages),
+      selectedIcon: SvgPicture.asset(
+        AssetConstants.messages,
+        colorFilter: const ColorFilter.mode(Colors.green, BlendMode.srcIn),
+      ),
       label: '',
     ),
     NavigationDestination(
       icon: SvgPicture.asset(AssetConstants.profile),
-      selectedIcon: SvgPicture.asset(AssetConstants.profile),
+      selectedIcon: SvgPicture.asset(
+        AssetConstants.profile,
+        colorFilter: const ColorFilter.mode(Colors.green, BlendMode.srcIn),
+      ),
       label: '',
     ),
   ];
